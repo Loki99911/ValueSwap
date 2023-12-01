@@ -1,12 +1,12 @@
 import axios from "axios";
 
-// axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
+axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
 axios.defaults.headers.common["x_cg_demo_api_key"] =
   import.meta.env.VITE_API_KEY;
 
 export const getBaseList = () => {
   return axios
-    .get("https://api.coingecko.com/api/v3/coins/list")
+    .get("/coins/list")
     .then(function (response) {
       return response.data;
     })
@@ -16,7 +16,7 @@ export const getBaseList = () => {
 };
 
 function getOneCoinInfo(id) {
-  return axios.get(`https://api.coingecko.com/api/v3/coins/${id}`);
+  return axios.get(`coins/${id}`);
 }
 export const getCoinsInfo = (ids) => {
   const promises = ids.map((id) => getOneCoinInfo(id));
