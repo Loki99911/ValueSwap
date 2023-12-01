@@ -102,8 +102,8 @@ const TransferForm = ({ sendEthereum, account, loader }) => {
 
 TransferForm.propTypes = {
   sendEthereum: PropTypes.node,
-  account:"",
-  loader:""
+  account: PropTypes.node,
+  loader: PropTypes.node,
 };
 
 export default TransferForm;
