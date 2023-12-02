@@ -16,7 +16,7 @@ jobs:
           touch .env
           echo "${{ secrets.MY_VAR }}" >> .env
 
-      - name: Install,  build 🔧
+      - name: Install, build 🔧
         run: |
           npm install
           npm run build
