@@ -5,6 +5,7 @@ import logo from "./assets/Frame.svg";
 import { MainVideo } from "./components/MainComp/MainComp.styled";
 import { useEffect, useState } from "react";
 import { getBaseList, getCoinsInfo } from "./helpers/api/getBaseList";
+import video from "../public/video.mp4";
 
 function App() {
   const [baseCoinList, setBaseCoinList] = useState([]);
@@ -25,7 +26,7 @@ function App() {
       <img src={logo} alt="logo" style={{ marginBottom: "69px" }} />
       <TransferForm baseCoinList={baseCoinList} />
       <MainVideo autoPlay muted loop playsInline>
-        <source src="../../../public/video.mp4" type="video/mp4" />
+        <source src={video} type="video/mp4" />
       </MainVideo>
     </MainComp>
   );
